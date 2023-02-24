@@ -18,6 +18,8 @@ class CommandTests(SimpleTestCase):
         # patched_check is a mock object created from @patch decorator
         """Test waiting for database if database ready"""
         patched_check.return_value = True
+        # This means that when the wait_for_db command calls the check method,
+        # it will return True instead of the actual result of the method.
 
         call_command('wait_for_db')
         # calling django command by name

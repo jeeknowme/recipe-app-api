@@ -19,6 +19,7 @@ services:
       - DB_NAME=devdb
       - DB_USER=devuser
       - DB_PASSWORD=password
+      - DB_PORT=5432
     depends_on:
       - db
 
@@ -30,6 +31,8 @@ services:
       - POSTGRES_DB=devdb
       - POSTGRES_USER=devuser
       - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
 
 volumes:
   dev-db-data:
